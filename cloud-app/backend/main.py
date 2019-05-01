@@ -19,7 +19,7 @@ from sklearn.preprocessing import StandardScaler
 
 
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
 
 
 def dbscan_plot():
@@ -41,11 +41,12 @@ def dbscan_plot():
     plt.xlabel("Feature 0")
     plt.ylabel("Feature 1")
 
+    plt.savefig("../src/img/dbscan.png")
     #save as bytes object
-    bytes_image = io.BytesIO()
-    plt.savefig(bytes_image, format='png')
-    bytes_image.seek(0)
-    return bytes_image
+    # bytes_image = io.BytesIO()
+    # plt.savefig(bytes_image, format='png')
+    # bytes_image.seek(0)
+    # return bytes_image
 
 def kmeans_plot():
     # cluster the data into five clusters
@@ -70,29 +71,37 @@ def kmeans_plot():
     plt.xlabel("Feature 0")
     plt.ylabel("Feature 1")
 
-    #save as bytes object
-    bytes_image = io.BytesIO()
-    plt.savefig(bytes_image, format='png')
-    bytes_image.seek(0)
-    return bytes_image
+    plt.savefig("../src/img/kmeans.png")
+    # save as bytes object
+    # bytes_image = io.BytesIO()
+    # plt.savefig(bytes_image, format='png')
+    # bytes_image.seek(0)
+    # return bytes_image
 
-@app.route('/kmeans', methods=['GET'])
-def kmeans():
-    bytes_obj = kmeans_plot()
-    return send_file(bytes_obj,
-                     attachment_filename='plot.png',
-                     mimetype='image/png')
+# @app.route('/kmeans', methods=['GET'])
+# def kmeans():
+#     bytes_obj = kmeans_plot()
+#     f = open("../src/img/kmeans.png", "wb")
+#     f.write(bytes_obj)
+#     f.close
+#     return send_file(bytes_obj,
+#                      attachment_filename='plot.png',
+#                      mimetype='image/png')
 
-@app.route('/dbscan', methods=['GET'])
-def dbscan():
-    bytes_obj = dbscan_plot()
-    return send_file(bytes_obj,
-                     attachment_filename='plot.png',
-                     mimetype='image/png')
+# @app.route('/dbscan', methods=['GET'])
+# def dbscan():
+#     bytes_obj = dbscan_plot()
+#     return send_file(bytes_obj,
+#                      attachment_filename='plot.png',
+#                      mimetype='image/png')
 
-@app.route('/compare', methods=['GET'])
-def get_plot():
-    return
+# @app.route('/compare', methods=['GET'])
+# def get_plot():
+#     return
+
+
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=80)
+    kmeans_plot()
+    dbscan_plot()
+    # app.run(debug=True, host="0.0.0.0", port=80)
