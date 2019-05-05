@@ -23,8 +23,6 @@ class Home extends Component {
       <div className="root" style={styles.root}>
         <Splash/>
         <div>
-  
-
         </div>
       </div>
     );
