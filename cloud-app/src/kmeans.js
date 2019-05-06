@@ -37,13 +37,13 @@ class Kmeans extends Component{
                     <img className="image" src={pic2}  alt=""/>
                     <p>
                         After creating the dataset (which in your case, you will have an actual dataset), we need to 
-                        transform the data to ensure that it will work with the DBSCAN algorithm. We want to normalize the 
+                        transform the data to ensure that it will work with the K-MEANS algorithm. We want to normalize the 
                         dataset. This is important because the kmeans uses the average distance between points. The distance is
                         calculated using Euclidean metrics. Hence, we need to normalize the dataset. 
                     </p>
                     <img className="image" src={pic3}  alt=""/>
                     <p>
-                        We use the kmeans algorithm from scikit-learn. In order to create the kemans object, we need to 
+                        We use the K-MEANS algorithm from scikit-learn. In order to create the K-MEANS object, we need to 
                         specify the number of clusters. This is critical. To make use of this algorithm, the user needs 
                         significant domain knowledge of the unlabeled dataset. For instance, if the dataset consists of 
                         types of dog breeds, the developer should know how many possible dog breeds are within the dataset.
