@@ -33,24 +33,6 @@ class Navbar2 extends Component {
       });
     }
 
-    handleEvents = (resp) => {
-      this.setState( {
-          resultsEvents: resp
-      });
-    }
-
-    handleTypes = (resp) => {
-      this.setState( {
-          resultsTypes: resp
-      });
-    }
-
-    handleGroups = (resp) => {
-      this.setState( {
-          resultsGroups: resp
-      });
-    }
-
 	render () {
         console.log (Logo)
 		return(
@@ -76,9 +58,6 @@ class Navbar2 extends Component {
                 </Nav.Item>
                 <Nav.Item>
                     <LinkContainer to="/compare"><Nav.Link>Compare</Nav.Link></LinkContainer>
-                </Nav.Item>
-                <Nav.Item>
-                    <LinkContainer to="/About"><Nav.Link>About</Nav.Link></LinkContainer>
                 </Nav.Item>
                 </Nav>
             </Navbar.Collapse>

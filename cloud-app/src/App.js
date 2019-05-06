@@ -16,10 +16,8 @@ class App extends Component {
           <Navbar/>
           <Route exact path="/" component={Home}/>
           <Route path ="/kmeans" component ={Kmeans}/>
-          {/* <Route path ="/dbscan" component ={Dbscan}/>
-          <Route path ="/kmeans" component ={Kmeans}/>
-          <Route path ="/compare" component ={Compare}/> */}
-          {/* <Footer/> */}
+          <Route path ="/dbscan" component ={Dbscan}/>
+          <Route path ="/compare" component ={Compare}/>
         </div>
       </Router>
 

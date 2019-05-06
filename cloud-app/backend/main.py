@@ -42,11 +42,6 @@ def dbscan_plot():
     plt.ylabel("Feature 1")
 
     plt.savefig("../src/img/dbscan.png")
-    #save as bytes object
-    # bytes_image = io.BytesIO()
-    # plt.savefig(bytes_image, format='png')
-    # bytes_image.seek(0)
-    # return bytes_image
 
 def kmeans_plot():
     # cluster the data into five clusters
@@ -72,34 +67,6 @@ def kmeans_plot():
     plt.ylabel("Feature 1")
 
     plt.savefig("../src/img/kmeans.png")
-    # save as bytes object
-    # bytes_image = io.BytesIO()
-    # plt.savefig(bytes_image, format='png')
-    # bytes_image.seek(0)
-    # return bytes_image
-
-# @app.route('/kmeans', methods=['GET'])
-# def kmeans():
-#     bytes_obj = kmeans_plot()
-#     f = open("../src/img/kmeans.png", "wb")
-#     f.write(bytes_obj)
-#     f.close
-#     return send_file(bytes_obj,
-#                      attachment_filename='plot.png',
-#                      mimetype='image/png')
-
-# @app.route('/dbscan', methods=['GET'])
-# def dbscan():
-#     bytes_obj = dbscan_plot()
-#     return send_file(bytes_obj,
-#                      attachment_filename='plot.png',
-#                      mimetype='image/png')
-
-# @app.route('/compare', methods=['GET'])
-# def get_plot():
-#     return
-
-
 
 if __name__ == "__main__":
     kmeans_plot()
